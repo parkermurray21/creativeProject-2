@@ -1,0 +1,40 @@
+.card1{
+    text-align: center;
+    margin-bottom: 10vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border: 2px solid;
+    border-color: black;
+    background-color: white;
+    width: 15vw;
+    height: auto;
+    display:inline-block;
+   
+    
+}
+
+.dateScores{
+    padding-top: 10vh;
+    text-align: center;
+    display: inline-block;
+}
+
+#gamesResults{
+    align-content: center;
+    text-align: center;
+    
+    
+}
+
+.wrapper{
+    text-align: center;
+    background-color: lightblue;
+}
+
+header{
+    padding-bottom: 3vw;
+}
+.form{
+    background-color: lightblue;
+    padding-top: 20px;
+}

@@ -1,16 +1,41 @@
 <html>
     <head>
         <title>Live Sports Scores</title>
-    </head>
-    <body>
         
-        <H1>Hello World!</H1>
-        <div id="root">
+        <link rel="stylesheet" href="Grid.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">    
+    </head>
+    <body onload="scores()">
+        <header>        
+            <H1>NBA Scores</H1>
+            
+        </header>
+        <div>
+            <h2 >LIVE SCORES</h2>
+            
+            <div id="liveUpdates">
+                
+            </div>
             
         </div>
         
-        <input id="date" type="date" value=""></input><br/>
-        <input id="dateSubmit" type="submit" value="Get Scores"></input>
+        <div class="form">
+            <h2>Search Games By Past Date</h2>
+            <input id="date" type="date" value=""></input><br/>
+            <input id="dateSubmit" type="submit" value="Get Scores"></input>
+        </div>
+        <div class="wrapper">
+            
+            <section class="dateScores row">
+                <div id="gamesResults">
+                </div>
+            </section>
+        </div>
+            
+
+        
+        
         
         <script text="type/javascript" src="sportScripts.js"></script>
     </body>
