@@ -11,6 +11,7 @@ document.getElementById("dateSubmit").addEventListener("click", function(event) 
     return;
   //console.log(date);
   document.getElementById("gamesResults").innerHTML = "";
+  document.getElementById("noGames").innerHTML = "";
   
   
   gameOnDate();
@@ -43,27 +44,42 @@ function gameOnDate(){
        
        let gameCard = "";
        
-      
-     
-      for(let i = 0; i < json.api.games.length; i++){
-         //console.log(json.api.games[i].hTeam.nickName + ' vs. ' + json.api.games[i].vTeam.nickName);
-          //console.log("points " + json.api.games[i].hTeam.score.points);
-          
-         
-        
-         setTimeout(function() { 
-            gameCard +='<div class="card1 card">';
-            gameCard +='<div class="card-body">';
-            gameCard +='<h5 class="card-title">'+ json.api.games[i].hTeam.nickName + ' \t vs. \t ' + json.api.games[i].vTeam.nickName + '</h5>';
-            gameCard +='<h6 class="card-subtitle mb-2 text-muted">Final</h6>';
-            gameCard +='<h5 class="card-text">' + json.api.games[i].hTeam.score.points + ' ------- ' +  json.api.games[i].vTeam.score.points +  '</h5>';
-            gameCard +='</div>';
-            gameCard +='</div>';
-        ;}, 700);
-        
-      }
-      setTimeout(function() {document.getElementById("gamesResults").innerHTML = gameCard;
+       
+       if(json.api.games.length === 0){
+            console.log("No Live Games");
+            
+            gameCard+= '<div class=wrapper>';
+            gameCard+= '<h2 class="bg-text3">No Games Played On That Date </h2>';
+            gameCard+= '</div>';   
+            
+            setTimeout(function() {document.getElementById("noGames").innerHTML = gameCard;
           }, 700);
+      }
+       
+      else{
+     
+          for(let i = 0; i < json.api.games.length; i++){
+             //console.log(json.api.games[i].hTeam.nickName + ' vs. ' + json.api.games[i].vTeam.nickName);
+              //console.log("points " + json.api.games[i].hTeam.score.points);
+              
+             
+            
+             setTimeout(function() { 
+                gameCard +='<div class="card1 card">';
+                gameCard +='<div class="card-body">';
+                gameCard +='<h5 class="card-title">'+ json.api.games[i].hTeam.nickName + ' \t vs. \t ' + json.api.games[i].vTeam.nickName + '</h5>';
+                gameCard +='<h6 class="card-subtitle mb-2 text-muted">Final</h6>';
+                gameCard +='<h5 class="card-text">' + json.api.games[i].hTeam.score.points + ' ------- ' +  json.api.games[i].vTeam.score.points +  '</h5>';
+                gameCard +='</div>';
+                gameCard +='</div>';
+            ;}, 700);
+            
+          }
+          setTimeout(function() {document.getElementById("gamesResults").innerHTML = gameCard;
+          }, 700);
+      }
+      
+      
       
       
       
