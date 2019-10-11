@@ -7,31 +7,41 @@
         <link rel="stylesheet" href="style.css">    
     </head>
     <body onload="scores()">
-        <header>        
-            <H1>NBA Scores</H1>
-            
-        </header>
-        <div>
-            <h2 >LIVE SCORES</h2>
-            
-            <div id="liveUpdates">
-                
-            </div>
-            
-        </div>
-        
-        <div class="form">
-            <h2>Search Games By Past Date</h2>
-            <input id="date" type="date" value=""></input><br/>
-            <input id="dateSubmit" type="submit" value="Get Scores"></input>
-        </div>
-        <div class="wrapper">
-            
-            <section class="dateScores row">
-                <div id="gamesResults">
+    
+       
+           <header>
+               <div class=wrapper>
+                   <H1 class="bg-text2">NBA Scores</H1>
                 </div>
-            </section>
-        </div>
+           </header>
+            
+        
+        <section class="liveScoreSec">
+                
+                <div class=wrapper>
+                    <h2 class="bg-text2">LIVE SCORES</h2>
+                </div>                
+                <div id="liveUpdates">
+                    
+                </div>
+        </section>
+        
+        <section class="PGS">
+            <div class="wrapper">
+                <div class="bg-text2 form">
+                    <h2>SEARCH PAST GAMES BY DATE</h2>
+                    <input id="date" type="date" value=""></input><br/>
+                    <input id="dateSubmit" type="submit" value="Get Scores"></input>
+                </div>
+            </div>
+            <div class="wrapper">
+                
+                <section class="dateScores row">
+                         <div id="gamesResults">
+                    </div>
+                </section>
+            </div>
+        </section>
             
 
         
@@ -39,6 +49,7 @@
         
         <script text="type/javascript" src="sportScripts.js"></script>
     </body>
+    <footer><footer> <a href="https://github.com/parkermurray21/creativeProject-2" target=blank>Github.com</a></footer></footer>
     
     
 </html>

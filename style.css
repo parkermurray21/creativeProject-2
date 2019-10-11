@@ -1,15 +1,22 @@
+body{
+     background-image: url(img/court.jpg);
+    background-position: top left;
+}
+
 .card1{
     text-align: center;
     margin-bottom: 10vh;
     margin-left: 2vw;
     margin-right: 2vw;
     border: 2px solid;
-    border-color: black;
+    border-color: white;
     background-color: white;
     width: 15vw;
     height: auto;
     display:inline-block;
-   
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.70); /* Black w/opacity/see-through */
+    color: white;
     
 }
 
@@ -28,13 +35,88 @@
 
 .wrapper{
     text-align: center;
-    background-color: lightblue;
+}
+
+.header1{
+    padding-bottom: 3vw;
+    height: 40vh;
+    width:auto;
+    background-image:  url(img/Arena.jpg);
+    background-size: cover;
+    background-position: 0% 70%;
+    text-align: center;
+    
+    filter: blur(2px);
+  -webkit-filter: blur(2px);
+
+}
+.form{
+    padding-top: 20px;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.60); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -500%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.bg-text2 {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.60); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+.liveScoreSec{
+    min-height:50vh;
+   
+}
+
+.PGS{
+    min-height:50vh;
+}
+
+footer {
+  bottom: 0px;
+  height: auto;
+  width: 100vw;
+  background-color: lightgrey !important;
+  color: lightgrey !important;
+  text-align: center;
+  color:white;
+  
 }
 
 header{
-    padding-bottom: 3vw;
+    margin-bottom: 10vh;
 }
-.form{
-    background-color: lightblue;
-    padding-top: 20px;
+
+.bg-text3 {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.60); /* Black w/opacity/see-through */
+  color: Red;
+  font-weight: bold;
+  border: 3px solid red;
+  width: 40%;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10vh;
 }
+

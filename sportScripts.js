@@ -17,7 +17,7 @@ document.getElementById("dateSubmit").addEventListener("click", function(event) 
   date = "";
   
 	//console.log("sup dude");
-  scores();
+  //scores();
 });
 
 
@@ -34,7 +34,10 @@ function gameOnDate(){
 .then(function(response) {
       return response.json();
     }).then(function(json) {	
-      //console.log(json);
+      console.log("this JSON" + json);
+      console.log(json);
+      
+      
       
        //console.log(json.api.games.length);
        
@@ -45,6 +48,7 @@ function gameOnDate(){
       for(let i = 0; i < json.api.games.length; i++){
          //console.log(json.api.games[i].hTeam.nickName + ' vs. ' + json.api.games[i].vTeam.nickName);
           //console.log("points " + json.api.games[i].hTeam.score.points);
+          
          
         
          setTimeout(function() { 
@@ -76,6 +80,7 @@ function gameOnDate(){
 
 
 function scores(){
+    console.log("fetching live Scores");
     fetch("https://api-nba-v1.p.rapidapi.com/games/live/", {
 	"method": "GET",
 	"headers": {
@@ -87,24 +92,34 @@ function scores(){
       return response.json();
     }).then(function(json) {	
       console.log(json);
-      
       let liveCard="";
       
-      for(let i = 0; i < json.api.games.length; i++){
-         //console.log(json.api.games[i].hTeam.nickName + ' vs. ' + json.api.games[i].vTeam.nickName);
-          //console.log("points " + json.api.games[i].hTeam.score.points);
-         
-        
-         setTimeout(function() { 
-            liveCard +='<div class="card1 card">';
-            liveCard +='<div class="card-body">';
-            liveCard +='<h5 class="card-title">'+ json.api.games[i].hTeam.nickName + ' \t vs. \t ' + json.api.games[i].vTeam.nickName + '</h5>';
-            liveCard +='<h6 class="card-subtitle mb-2 text-muted">' + json.api.games[i].currentPeriod + ' ' + json.api.games[i].clock + '</h6>';
-            liveCard +='<h5 class="card-text">' + json.api.games[i].hTeam.score.points + ' ------- ' +  json.api.games[i].vTeam.score.points +  '</h5>';
-            liveCard +='</div>';
-            liveCard +='</div>';
-        ;}, 700);
-        
+      if(json.api.games.length === 0){
+            console.log("No Live Games");
+            
+            liveCard+= '<div class=wrapper>';
+            liveCard+= '<h2 class="bg-text3">No Games Are Being Played</h2>';
+            liveCard+= '</div>';                
+      }
+      
+      else{
+      
+          for(let i = 0; i < json.api.games.length; i++){
+             //console.log(json.api.games[i].hTeam.nickName + ' vs. ' + json.api.games[i].vTeam.nickName);
+              //console.log("points " + json.api.games[i].hTeam.score.points);
+             
+            
+             setTimeout(function() { 
+                liveCard +='<div class="card1 card">';
+                liveCard +='<div class="card-body">';
+                liveCard +='<h5 class="card-title">'+ json.api.games[i].hTeam.nickName + ' \t vs. \t ' + json.api.games[i].vTeam.nickName + '</h5>';
+                liveCard +='<h6 class="card-subtitle mb-2 text-muted">' + json.api.games[i].currentPeriod + ' ' + json.api.games[i].clock + '</h6>';
+                liveCard +='<h5 class="card-text">' + json.api.games[i].hTeam.score.points + ' ------- ' +  json.api.games[i].vTeam.score.points +  '</h5>';
+                liveCard +='</div>';
+                liveCard +='</div>';
+            ;}, 700);
+            
+          }
       }
       setTimeout(function() {document.getElementById("liveUpdates").innerHTML = liveCard;
           }, 700);
